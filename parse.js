@@ -45,6 +45,6 @@ for (let block of rarityBlocks) {
     }
 }
 // write to file
-fs.writeFileSync(filename.split(".")[0] + "_scaped.json", JSON.stringify(setCards));
+fs.writeFileSync(filename.split(".")[0] + "_scraped.json", JSON.stringify(setCards));
 // test bushiscrape
 bushi_scraper('https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E001SP');
