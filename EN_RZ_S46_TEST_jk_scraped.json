@@ -1,0 +1,145 @@
+[{
+    "code": "RZ/S46-E001SP",
+    "availability": "0",
+    "price": "60.00",
+    "name": "Royal Election Candidate, Felt",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E001SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E001SP.jpg"
+}, {
+    "code": "RZ/S46-E030SP",
+    "availability": "0",
+    "price": "80.00",
+    "name": "Pink-Haired Maid, Ram",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E030SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E030SP.jpg"
+}, {
+    "code": "RZ/S46-E031SP",
+    "availability": "0",
+    "price": "30.00",
+    "name": "Cute Girl, Beatrice",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E031SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E031SP.jpg"
+}, {
+    "code": "RZ/S46-E059SP",
+    "availability": "0",
+    "price": "160.00",
+    "name": "Silver-Haired Beauty, Emilia",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E059SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E059SP.jpg"
+}, {
+    "code": "RZ/S46-E060SP",
+    "availability": "0",
+    "price": "200.00",
+    "name": "Blue-Haired Maid, Rem",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E060SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E060SP.jpg"
+}, {
+    "code": "RZ/S46-E068SP",
+    "availability": "0",
+    "price": "20.00",
+    "name": "Subaru Natsuki",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E068SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E068SP.jpg"
+}, {
+    "code": "RZ/S46-TE38SP",
+    "availability": "0",
+    "price": "75.00",
+    "name": "Spirit User, Emilia",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-TE38SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_TE38SP.jpg"
+}, {
+    "code": "RZ/S46-TE42SP",
+    "availability": "0",
+    "price": "75.00",
+    "name": "A Short Snooze, Emilia",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-TE42SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_TE42SP.jpg"
+}, {
+    "code": "RZ/S46-TE43SP",
+    "availability": "0",
+    "price": "300.00",
+    "name": "Light of Love, Rem",
+    "rarity": "SP",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-TE43SP",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_TE43SP.jpg"
+}, {
+    "code": "RZ/S46-E005R",
+    "availability": "2",
+    "price": "15.00",
+    "name": "Declaration of War, Felt",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E005R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E005R.jpg"
+}, {
+    "code": "RZ/S46-E032R",
+    "availability": "2",
+    "price": "4.00",
+    "name": "Roswaal Mansion Maid, Ram",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E032R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E032R.jpg"
+}, {
+    "code": "RZ/S46-E036R",
+    "availability": "4",
+    "price": "5.00",
+    "name": "Sunset Knoll, Beatrice",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E036R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E036R.jpg"
+}, {
+    "code": "RZ/S46-E058R",
+    "availability": "1",
+    "price": "35.00",
+    "name": "Peaceful Life, Rem",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E058R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E058R.jpg"
+}, {
+    "code": "RZ/S46-E061R",
+    "availability": "0",
+    "price": "15.00",
+    "name": "Half-Elf Maiden, Emilia",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E061R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E061R.jpg"
+}, {
+    "code": "RZ/S46-E069R",
+    "availability": "4",
+    "price": "6.00",
+    "name": "Modest Request, Rem",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-E069R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_E069R.jpg"
+}, {
+    "code": "RZ/S46-TE32R",
+    "availability": "0",
+    "price": "75.00",
+    "name": "Bride in Pure White, Rem",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-TE32R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_TE32R.jpg"
+}, {
+    "code": "RZ/S46-TE33R",
+    "availability": "0",
+    "price": "20.00",
+    "name": "Lap Pillow Emilia",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-TE33R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_TE33R.jpg"
+}, {
+    "code": "RZ/S46-TE35R",
+    "availability": "1",
+    "price": "10.00",
+    "name": "Welcome to This World! Emilia & Rem",
+    "rarity": "RRR",
+    "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=RZ/S46-TE35R",
+    "img": "http://jktcg.com/WS_EN/EN_RZ_S46_TEST/RZ_S46_TE35R.jpg"
+}]
