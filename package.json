@@ -1,0 +1,16 @@
+{
+  "name": "ws-scrape-poc",
+  "version": "0.0.1",
+  "description": "a proof-of-concept english weiss schwarz card data scraper",
+  "main": "/",
+  "dependencies": {
+    "node-html-parser": "^1.1.12",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
