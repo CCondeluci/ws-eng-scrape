@@ -1,0 +1,62 @@
+[
+    {
+        "code": "AB/W31-E118",
+        "availability": "4",
+        "price": "2.00",
+        "name": "\"Graduation Ceremony\" Kanade & Yuri",
+        "rarity": "PR",
+        "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=AB/W31-E118",
+        "img": "http://jktcg.com/WS_EN/EN_AB_W31/AB_W31_E118.jpg",
+        "NO_BUSHI_DATA": true
+    },
+    {
+        "code": "AB/W31-E119",
+        "availability": "5",
+        "price": "2.00",
+        "name": "Battlefront Rest, Yuri",
+        "rarity": "PR",
+        "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=AB/W31-E119",
+        "img": "http://jktcg.com/WS_EN/EN_AB_W31/AB_W31_E119.jpg",
+        "NO_BUSHI_DATA": true
+    },
+    {
+        "code": "AB/W31-E120",
+        "availability": "4",
+        "price": "2.00",
+        "name": "From Now On, Kanade",
+        "rarity": "PR",
+        "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=AB/W31-E120",
+        "img": "http://jktcg.com/WS_EN/EN_AB_W31/AB_W31_E120.jpg",
+        "NO_BUSHI_DATA": true
+    },
+    {
+        "code": "AB/W31-E121",
+        "availability": "11",
+        "price": "2.00",
+        "name": "Tomboy, Yui",
+        "rarity": "PR",
+        "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=AB/W31-E121",
+        "img": "http://jktcg.com/WS_EN/EN_AB_W31/AB_W31_E121.jpg",
+        "NO_BUSHI_DATA": true
+    },
+    {
+        "code": "AB/W31-E122",
+        "availability": "1",
+        "price": "15.00",
+        "name": "Bond of Many Lifetimes, Otonashi",
+        "rarity": "PR",
+        "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=AB/W31-E122",
+        "img": "http://jktcg.com/WS_EN/EN_AB_W31/AB_W31_E122.jpg",
+        "NO_BUSHI_DATA": true
+    },
+    {
+        "code": "AB/W31-E123",
+        "availability": "7",
+        "price": "1.00",
+        "name": "Otonashi's Close Friend, Hinata",
+        "rarity": "PR",
+        "bushi": "https://en.ws-tcg.com/cardlist/list/?cardno=AB/W31-E123",
+        "img": "http://jktcg.com/WS_EN/EN_AB_W31/AB_W31_E123.jpg",
+        "NO_BUSHI_DATA": true
+    }
+]

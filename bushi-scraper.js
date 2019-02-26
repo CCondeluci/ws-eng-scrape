@@ -5,7 +5,7 @@ const html_parser = require('node-html-parser');
 // golly gee mister i sure love node
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-module.exports.get = async (jk_card) => {
+module.exports.get = async (jk_card, count) => {
     try {
         // go get the card data from bushi's site
         let body = await request(jk_card.bushi);
@@ -14,16 +14,9 @@ module.exports.get = async (jk_card) => {
         // rip the card detail (praise bushi for ID-ing it) and get all table rows
         let cardDetail = full_html.querySelector("#cardDetail");
         let detailRows = cardDetail.querySelectorAll('tr');
-        // sometimes, bushi doesn't index their SPs/SSPs consistently
-        // fortunately, this is an easy check, albeit a little risky
-        // assumption made is that JK data is well-formed, which it has been
-        // set a flag for a recursive try, so we can use the right code but still get card detail
+        // sometimes, bushi doesn't index their promos... at all
         if (detailRows.length < 1) {
-            jk_card.bushiError = true;
-            jk_card.bushi = jk_card.bushi.substring(0, jk_card.bushi.length - 1);
-            return await module.exports.get(jk_card);
-        } else {
-            jk_card.bushiError = false;
+            throw new Error('No Card Data');
         }
         // get the card name element w/ annoying quotation marks by exploiting 'katakana' field
         let cardNameElem = cardDetail.querySelector('.kana');
@@ -38,11 +31,12 @@ module.exports.get = async (jk_card) => {
                 if (headerRows[i] !== undefined) {
                     // praise bushi yet again for consistent naming conventions
                     let currHeader = headerRows[i].structuredText;
+                    let currHeaderLower = currHeader.toLowerCase().replace(' ', '_');
                     let currData = dataRows[i].structuredText;
                     let currDataRaw = dataRows[i];
                     // use the file time to rip color and 'side' (LOL)
                     if (currHeader == "Color" || currHeader == "Side") {
-                        card[currHeader] = currDataRaw.innerHTML.match(/(?<=\/partimages\/)(.*?)(?=\s*\.gif)/gi)[0].toUpperCase();
+                        card[currHeaderLower] = currDataRaw.innerHTML.match(/(?<=\/partimages\/)(.*?)(?=\s*\.gif)/gi)[0].toUpperCase();
                     } 
                     // triggers get set as an array for climaxes
                     else if (currHeader == "Trigger") {
@@ -51,54 +45,83 @@ module.exports.get = async (jk_card) => {
                         for (let triggerImg of triggerCheck) {
                             triggers.push(triggerImg.toString().match(/(?<=\/partimages\/)(.*?)(?=\s*\.gif)/gi)[0].toUpperCase());
                         }
-                        card[currHeader] = triggers;
+                        card[currHeaderLower] = triggers;
                     }
                     // processing soul as int
                     else if (currHeader == "Soul") {
                         let soulArr = currDataRaw.querySelectorAll('img');
-                        card[currHeader] = soulArr.length;
+                        card[currHeaderLower] = soulArr.length;
                     }
                     // SHOULD split everything off
                     else if (currHeader == "Special Attribute") {
-                        card['Attributes'] = currData.split(' ・ ');
+                        card['attributes'] = currData.split(' ・ ');
                     }
                     // processed as an array, split on effects
                     else if (currHeader == "Text") {
-                        card[currHeader] = currData.split('\n');
+                        card['ability'] = currData.split('\n');
                     }
                     // we already have this from JK, but better to take it from bushi
                     else if (currHeader == "Card No.") {
-                        // sometimes bushi messes up
-                        if (jk_card.bushiError) {
-                            card['Code'] = jk_card.code;
-                        } 
-                        // sometimes bushi is right
-                        else {
-                            card['Code'] = currData;
-                        }
+                        card['code'] = currData;
                     }
                     // character, event, or climax
                     else if (currHeader == "Card Type") {
-                        card['Type'] = currData;
+                        card['type'] = currData;
                     }
                     // get bushi's real card name (w/ annoying quotes)
                     else if (currHeader == "Card Name") {
-                        card['Name'] = cardNameElem.structuredText.trim();
+                        card['name'] = cardNameElem.structuredText.trim();
                     }
                     else if (currHeader == "Illustrator") {
                         // do not add, is not used
                     }
                     else {
-                        card[currHeader] = currData;
+                        card[currHeaderLower] = currData;
                     }
                 }
             }
         }
-        // add jk's image since it's better quality on average
-        card['Image'] = jk_card.img;
+        // process card code for set, sid, release
+        // ex: KS/W49-E034	
+        card.set = card.code.split('/')[0];
+        // disgaea-style catch (DG/EN-S03-E046)
+        if (card.code.split('-')[2]) {
+            card.release = card.code.split('/')[1].split('-')[1].substring(1);
+            card.sid = card.code.split('-')[2];
+        } else {
+            card.release = card.code.split('/')[1].split('-')[0].substring(1);
+            card.sid = card.code.split('-')[1];
+        }
+        // get bushi's image
+        let imageDrill = cardDetail.querySelector('.graphic');
+        let imageElem = imageDrill.querySelector('img');
+        card['image'] = 'https://en.ws-tcg.com/cardlist' + imageElem.attributes.src.substring(2);
         // return the card
         return card;
     } catch (error) {
-        console.log(error);
+        // this should only happen for promos really (barring SPs/SSPs)
+        // ...we will just have to fill them out manually
+        if (error.message == "No Card Data") {
+            jk_card.NO_BUSHI_DATA = true;
+            return jk_card;
+        } 
+        // else, likely a 443, so let's try again (up to 5x)
+        else {
+            if (count < 5) {
+                count++;
+                console.log("RETRYING: " + jk_card.name + "..." + count);
+                return await module.exports.get(jk_card, count);
+            } 
+            // MASSIVE ERROR
+            else {
+                console.log("BIG ERROR: " + jk_card.name);
+                console.log(error);
+                console.log("------------------------------");
+                jk_card.NO_BUSHI_DATA = true;
+                jk_card.MASSIVE_ERROR = true;
+                return jk_card;
+            }
+            
+        }
     }
 }

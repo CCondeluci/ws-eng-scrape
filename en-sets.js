@@ -1,0 +1,61 @@
+'use-strict';
+
+// key for set process, these are jk's set "ID"s
+// to only build out a DB for a select few, simply 
+// comment out the sets you don't need.
+// this should make it fairly easy to add new sets 
+// in the future.
+
+module.exports = [
+    'EN_AB_W31',
+    'EN_AOT_S35',
+    'EN_AOT2_S50',
+    'EN_APO_S53',
+    'EN_AW_S18',
+    'EN_AW2_S43',
+    'EN_BD_W47',
+    'EN_BDG_W54',
+    'EN_BM_S15',
+    'EN_CCS_WX01',
+    'EN_DG_S03',
+    'EN_FSU_S34', 
+    'EN_FSU2_S36',
+    'EN_FT_S02',
+    'EN_FZ_S17',
+    'EN_GL_S52',
+    'EN_IMC_W41',
+    'EN_KC_S25',
+    'EN_KC2_S31',
+    'EN_KC3_S42',
+    'EN_KCE1_SE28',
+    'EN_KLK_S27',
+    'EN_KS_W49',
+    'EN_KS2_W55',
+    'EN_LH_SE20',
+    'EN_LL_W24',
+    'EN_LL2_W34',
+    'EN_LLDX_W01',
+    'EN_LLDX2_W02',
+    'EN_LSS_W45',
+    'EN_LSSE1_WE27',
+    'EN_MM_W17',
+    'EN_MMR_W35',
+    'EN_NK_W30',
+    'EN_NKE1_WE22',
+    'EN_NM_S24',
+    'EN_P4_S01',
+    'EN_P5_S45',
+    'EN_PD1_S22',
+    'EN_PD2_S29',
+    'EN_PIDX_S04',
+    'EN_RZ_S46',
+    'EN_SAO1_S20',
+    'EN_SAO2_S26',
+    'EN_SAOE1_SE23',
+    'EN_SAOE2_SE26',
+    'EN_SAOM_S51',
+    'EN_SAOR_S47',
+    'EN_SY_W08',
+    'EN_SYE_WE09',
+    'EN_TL1_W37'
+];

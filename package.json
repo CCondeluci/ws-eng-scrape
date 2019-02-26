@@ -4,8 +4,14 @@
   "description": "a proof-of-concept english weiss schwarz card data scraper",
   "main": "/",
   "dependencies": {
+    "iconv-lite": "^0.4.24",
+    "imagemin": "^6.1.0",
+    "imagemin-keep-folder": "^5.3.2",
+    "imagemin-pngquant": "^7.0.0",
     "node-html-parser": "^1.1.12",
-    "request-promise-native": "^1.0.5"
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "sharp": "^0.21.3"
   },
   "devDependencies": {},
   "scripts": {
