@@ -33,7 +33,7 @@ async function recursiveLookup (options, count) {
     // go through all the sets
     for (let set of EN_SETS) {
         // read bushi-parsed set from file
-        let bushiString = fs.readFileSync('./bushi_output/' + set + '.json', 'utf8');
+        let bushiString = fs.readFileSync('./final_output/' + set + '.json', 'utf8');
         let cards = JSON.parse(bushiString);
         // go get the image for every card, compress it, then save it off
         for (let card of cards) {

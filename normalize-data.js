@@ -26,7 +26,10 @@ function normalizeTriggers(triggers) {
     for (let set of EN_SETS) {
         // read sets from files
         let bushiString = fs.readFileSync('./bushi_output/' + set + '.json', 'utf8');
-        let promoString = fs.readFileSync('./promo_output/' + set + '.json', 'utf8');
+        let promoString = "[]";
+        if (fs.existsSync('./promo_output/' + set + '.json', 'utf8')) {
+            promoString = fs.readFileSync('./promo_output/' + set + '.json', 'utf8');
+        }
         let bushiCards = JSON.parse(bushiString);
         let promoCards = JSON.parse(promoString);
         // new up a card list
@@ -47,7 +50,7 @@ function normalizeTriggers(triggers) {
         }
         
         // write data to file
-        fs.writeFileSync('./final_output/' + set + ".json", JSON.stringify(finalCards, null, 4));
+        fs.writeFileSync('./final_output/' + set.substring(3) + ".json", JSON.stringify(finalCards, null, 4));
         console.log("-----------------------");
         console.log("SET DONE: " + set);
         console.log("-----------------------");
