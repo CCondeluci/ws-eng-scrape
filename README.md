@@ -7,6 +7,7 @@ npm install
 node .\get-lists.js
 node .\parse.js 
 node .\get-bushi-data.js
+node .\normalize-data.js
 node .\image-get.js
 node .\optimize-png.js
 ```
