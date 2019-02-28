@@ -15,7 +15,7 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
 // recursive function for 3 tries per image
 async function recursiveLookup (options, count) {
-    if (count > 3) {
+    if (count > 5) {
         return false;
     }
     try {
@@ -45,9 +45,11 @@ async function recursiveLookup (options, count) {
                 url: card.image,
                 encoding: null
             };
-            
+            // recursively go get the body up to 5 times to combat random 443s
             let body = await recursiveLookup(options, 0);
+            // if we got a response
             if (body) {
+                // pull image into a buffer
                 let imgBuffer = Buffer.from(body);
 
                 // make set img directory if it doesn't already exist
@@ -55,10 +57,23 @@ async function recursiveLookup (options, count) {
                     fs.mkdirSync('./images/' + card.side + card.release);
                 }
 
-                if (card.type === 'Climax') {
-                    sharp(imgBuffer).resize(height, width).png().toFile('./images/' + card.side + card.release + '/' + card.sid + '.gif');
-                } else {
-                    sharp(imgBuffer).resize(width, height).png().toFile('./images/' + card.side + card.release + '/' + card.sid + '.gif');
+                // check if the image was from bushi or not
+                if (card.image.indexOf('https://en.ws-tcg.com/cardlist/cardimages') > -1) {
+                    // bushi climaxes are already flipped, so just invert the card dimensions
+                    if (card.type === 'Climax') {
+                        sharp(imgBuffer).resize(height, width).png().toFile('./images/' + card.side + card.release + '/' + card.sid + '.gif');
+                    } else {
+                        sharp(imgBuffer).resize(width, height).png().toFile('./images/' + card.side + card.release + '/' + card.sid + '.gif');
+                    }
+                }
+                // else, we have to flip climaxes
+                else {
+                    // bushi climaxes are already flipped, so just invert the card dimensions
+                    if (card.type === 'Climax') {
+                        sharp(imgBuffer).rotate(270).resize(height, width).png().toFile('./images/' + card.side + card.release + '/' + card.sid + '.gif');
+                    } else {
+                        sharp(imgBuffer).resize(width, height).png().toFile('./images/' + card.side + card.release + '/' + card.sid + '.gif');
+                    }
                 }
                 console.log("DONE: " + card.side + card.release + '/' + card.sid);
             } else {
@@ -67,4 +82,3 @@ async function recursiveLookup (options, count) {
         }
     }
 })();
-
