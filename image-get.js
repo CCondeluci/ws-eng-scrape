@@ -24,7 +24,7 @@ async function recursiveLookup (options, count) {
     } catch (error) {
         count++;
         console.log('Failed request...retrying... attempt #' + count);
-        recursiveLookup(options, count);
+        await recursiveLookup(options, count);
     }
 }
 
@@ -33,7 +33,7 @@ async function recursiveLookup (options, count) {
     // go through all the sets
     for (let set of EN_SETS) {
         // read bushi-parsed set from file
-        let bushiString = fs.readFileSync('./final_output/' + set + '.json', 'utf8');
+        let bushiString = fs.readFileSync('./final_output/' + set.substring(3) + '.json', 'utf8');
         let cards = JSON.parse(bushiString);
         // go get the image for every card, compress it, then save it off
         for (let card of cards) {
@@ -80,5 +80,9 @@ async function recursiveLookup (options, count) {
                 console.log("COULD NOT GET: " + card.side + card.release + '/' + card.sid);
             }
         }
+
+        console.log("-----------------------");
+        console.log("SET DONE: " + set);
+        console.log("-----------------------");
     }
 })();
