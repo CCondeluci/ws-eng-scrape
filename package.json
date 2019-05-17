@@ -1,6 +1,6 @@
 {
   "name": "ws-scrape-poc",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "a proof-of-concept english weiss schwarz card data scraper",
   "main": "/",
   "dependencies": {
@@ -15,7 +15,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./get-lists.js && node ./parse.js && node ./get-bushi-data.js && node ./normalize-data.js && node ./image-get.js && node ./optimize-png.js",
+    "data": "node ./get-lists.js && node ./parse.js && node ./get-bushi-data.js && node ./normalize-data.js",
+    "img": "node ./image-get.js && node ./optimize-png.js"
   },
   "author": "",
   "license": "ISC"
