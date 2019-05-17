@@ -57,5 +57,7 @@ module.exports = [
     'EN_SAOR_S47',
     'EN_SY_W08',
     'EN_SYE_WE09',
-    'EN_TL1_W37'
+    'EN_TL1_W37',
+    'EN_NGL_S58',
+    'EN_GGO_S59'
 ];
